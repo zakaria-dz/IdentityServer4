@@ -9,6 +9,9 @@ jobs:
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
+  - task: DotNetCoreInstaller@0	
+    inputs:	
+      version: 3.0.100-preview3-010431
   - task: Bash@3
     displayName: 'Build Script'
     inputs:
@@ -19,16 +22,11 @@ jobs:
   pool:
     vmImage: 'vs2017-win2016'
   steps:
+  - task: DotNetCoreInstaller@0	
+    inputs:	
+      version: 3.0.100-preview3-010431
   - task: PowerShell@2
     displayName: 'Build Script'
     inputs:
       targetType: filePath
-      filePath: ./build.ps1  
-  - task: NuGetCommand@2
-    displayName: 'MyGet push'
-    inputs:
-      command: push
-      packagesToPush: 'nuget/*.nupkg'
-      nuGetFeedType: external
-      publishFeedCredentials: 'MyGet'
-      condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+      filePath: ./build.ps1
