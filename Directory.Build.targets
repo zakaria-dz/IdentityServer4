@@ -6,6 +6,12 @@
     <IdentityServerVersion>3.0.0-preview3.*</IdentityServerVersion>
   </PropertyGroup>
 
+   <Target Name="SetAssemblyVersion" AfterTargets="MinVer">
+    <PropertyGroup>
+      <AssemblyVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).0</AssemblyVersion>
+    </PropertyGroup>
+  </Target>
+
   <ItemGroup>
     <PackageReference Include="MinVer" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
