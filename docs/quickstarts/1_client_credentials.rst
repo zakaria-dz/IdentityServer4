@@ -65,7 +65,7 @@ Open the project that we just created above in your favorite editor.  Find the `
         };
     }
 	
-.. note:: If you will be using this in production it is important to give your API a logical name.  Developers will be using this to connect to your api though your Identity server.  It should describe your api in simple terms to both developers and users.
+.. note:: If you will be using this in production it is important to give your API a logical name.  Developers will be using this to connect to your api through your Identity server.  It should describe your api in simple terms to both developers and users.
 
 A good example would be::
 
